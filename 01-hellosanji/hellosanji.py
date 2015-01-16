@@ -19,7 +19,7 @@ class Hellosanji(Sanji):
     @Route(methods=["post", "put"], resource="/hellosanji")
     def put(self, message, response):
         self.message = message.data["message"]
-        return response()
+        return response(data=self.message)
 
     @Route(methods="delete", resource="/hellosanji")
     def delete(self, message, response):
