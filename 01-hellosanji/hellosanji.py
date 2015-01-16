@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 import logging
-import os
 from sanji.core import Sanji
 from sanji.core import Route
 from sanji.connection.mqtt import Mqtt
@@ -15,7 +14,7 @@ class Hellosanji(Sanji):
 
     @Route(methods="get", resource="/hellosanji")
     def get(self, message, response):
-        return response(data="message": self.message)
+        return response(data={"message": self.message})
 
     @Route(methods=["post", "put"], resource="/hellosanji")
     def put(self, message, response):
